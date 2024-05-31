@@ -14,8 +14,8 @@
  const PORT = '3307'; //port de connexion 
  const DBNAME = 'db_peluche';
  const CHARSET = 'utf8';
- const LOGIN = 'root';
- const MDP = '';
+ const LOGIN = 'UserFumo';
+ const MDP = 'm0Td3P@ss3';
 
  function getBddConnexion(){
     $dsn = 'mysql:host='.HOST.';port='.PORT.';dbname='.DBNAME.';charset='.CHARSET;

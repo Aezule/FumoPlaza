@@ -19,7 +19,7 @@ session_start();
         <div class="header">
         <div class="Title">
                 <img src="./Vue/img/Logo/LogoMain.jpg" alt="logo">
-                <a href="../.."><h1>FumoPlaza</h1></a>
+                <a href=""><h1>FumoPlaza</h1></a>
             </div>
             <div class="buttonHeader">
                 <nav>
@@ -33,9 +33,7 @@ session_start();
             </div>
 
             <div class="buttons">
-            <div class="Panier">
-                <button>Panier</button>
-            </div>
+
             <div class="button">
             <Button>
                 <?php if(!isset($_SESSION['User'])) {

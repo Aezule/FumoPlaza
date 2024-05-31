@@ -279,6 +279,12 @@ padding: 10px;
 .PrixPanier li{
     list-style-type: none;
 }
+.PrixPanier{
+    border-color: black ;
+    border-width: 1px;
+    border-style: double;
+    padding: 30px;
+}
 
 .PageBackOffice h1{
     display: flex;
@@ -299,4 +305,12 @@ padding: 10px;
 
 .ListeProduits{
     padding-right: 100px;
+ 
 }
+
+.ProduitPanier{   border-color: black ;
+    border-width: 1px;
+    border-style: double;
+    padding: 30px;
+
+margin-right: 20px;}

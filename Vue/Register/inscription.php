@@ -28,23 +28,86 @@ session_start();
             <div>
                 <label for="Email">Email :</label>
                 <input type="text" id="Email" name="Email" required>
+                <span id="errorEmail" class="text-danger"></span>
+                
                 <label for="password">Mot de passe :</label>
                 <input type="password" id="password" name="password" required>
+                <span id="errorPassword" class="text-danger"></span>
+                
                 <label for="Nom">Nom :</label>
                 <input type="text" id="Nom" name="Nom" required>
+                <span id="errorNom" class="text-danger"></span>
+                
                 <label for="Prenom">Prenom :</label>
                 <input type="text" id="Prenom" name="Prenom" required>
+                <span id="errorPrenom" class="text-danger"></span>
+                
                 <div class="boutonBas">
-                    <span><?php if (isset($_GET["message"]))
-                        echo $_GET["message"] ?></span>
-                        <br>
-                        <input type="submit" value="S'inscrire">
-                    </div>
-
+                    <span><?php if (isset($_GET["message"])) echo $_GET["message"]; ?></span>
+                    <br>
+                    <input id="envoi" type="submit" value="S'inscrire">
                 </div>
             </div>
+        </div>
+    </form>
+</body>
 
-        </form>
-    </body>
+</html>
 
-    </html>
+<script>
+var form = document.querySelector('form');
+var validation = document.getElementById('envoi');
+var email = document.getElementById('Email');
+var nom = document.getElementById('Nom');
+var prenom = document.getElementById('Prenom');
+var password = document.getElementById('password');
+var errorEmail = document.getElementById('errorEmail');
+var errorNom = document.getElementById('errorNom');
+var errorPrenom = document.getElementById('errorPrenom');
+var errorPassword = document.getElementById('errorPassword');
+
+var regex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\\$%\\^&\\*])(?=.{8,})");
+var regexMail = /^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/;
+
+validation.addEventListener('click', function(e) {
+    var isValid = true;
+    
+    if (!nom.value) {
+        isValid = false;
+        errorNom.textContent = 'Nom manquant';
+    } else {
+        errorNom.textContent = '';
+    }
+
+    if (!prenom.value) {
+        isValid = false;
+        errorPrenom.textContent = 'Prenom manquant';
+    } else {
+        errorPrenom.textContent = '';
+    }
+
+    if (!email.value) {
+        isValid = false;
+        errorEmail.textContent = 'Email manquant';
+    } else if (!regexMail.test(email.value)) {
+        isValid = false;
+        errorEmail.textContent = 'Email invalide';
+    } else {
+        errorEmail.textContent = '';
+    }
+
+    if (!password.value) {
+        isValid = false;
+        errorPassword.textContent = 'Mot de passe manquant';
+    } else if (!regex.test(password.value)) {
+        isValid = false;
+        errorPassword.textContent = 'Mot de passe ne respecte pas les critères de sécurité';
+    } else {
+        errorPassword.textContent = '';
+    }
+
+    if (!isValid) {
+        e.preventDefault();
+    }
+});
+</script>

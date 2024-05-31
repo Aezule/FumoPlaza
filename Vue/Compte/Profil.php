@@ -37,57 +37,49 @@ foreach ($Panier as $panierItem) {
 
 </head>
 
-
 <body>
 <?php include '../Header/header.php'; ?>
 
 <div class="CompteStyle">
-<div class="PanierStyle">
-<h1>Panier</h1>
-<?php if (!empty($produitsPanier)): ?>
+    <div class="PanierStyle">
+        <h1>Panier</h1>
+        <?php if (!empty($produitsPanier)): ?>
             <ul>
                 <?php foreach ($produitsPanier as $produit): ?>
                     <li><?php echo htmlspecialchars($produit->getLibelle()); ?></li>
                 <?php endforeach; ?>
             </ul>
             <div class="BoutonAchat">
-            <button>
-                <a href="../Payement/Achat.php">Passer a l'achat</a>
-            </button>
-
+                <button>
+                    <a href="../Payement/Achat.php">Passer à l'achat</a>
+                </button>
             </div>
-          
         <?php else: ?>
             <p>Votre panier est vide.</p>
         <?php endif; ?>
-        
+    </div>
+
+    <div class="DataProfil">
+        <h1>Information du compte</h1>
+
+        <h2>Email :</h2>
+        <input type="text" id="mail" value="<?php echo $Compte->getLogin(); ?>">
+        <span id="errorMail" class="text-danger"></span>
+        <button id="modifierMail">Modifier</button>
+
+        <h2>Nom :</h2>
+        <input type="text" id="nom" value="<?php echo $Compte->getNom(); ?>">
+        <button id="modifierNom">Modifier</button>
+
+        <h2>Prenom :</h2>
+        <input type="text" id="prenom" value="<?php echo $Compte->getPrenom(); ?>">
+        <button id="modifierPrenom">Modifier</button>
+
+        <br>
+
+        <a href="../../Controller/deconnexion">Déconnexion</a>
+    </div>
 </div>
-
-
-<div class="DataProfil">
-    <h1>Information du compte</h1> 
-
-    <h2>Email : </h2>
-    <input type="text" id="mail" value="<?php echo $Compte->getLogin(); ?>" > 
-    <button id="modifierMail">Modifier</button>
-
-    <h2>Nom : </h2>
-    <input type="text" id="nom" value="<?php echo $Compte->getNom(); ?>" > 
-    <button id="modifierNom">Modifier</button>
-
-    <h2>Prenom : </h2>
-    <input type="text" id="prenom" value="<?php echo $Compte->getPrenom(); ?>" > 
-    <button id="modifierPrenom">Modifier</button>
-
-    <br>
-
-    <a href="../../Controller/deconnexion">Deconnexion</a>
-</div>
-
-</div>
-
-
-
 
 <script>
     // Récupérer les éléments input et les boutons de modification
@@ -97,12 +89,23 @@ foreach ($Panier as $panierItem) {
     var modifierMailButton = document.getElementById('modifierMail');
     var modifierNomButton = document.getElementById('modifierNom');
     var modifierPrenomButton = document.getElementById('modifierPrenom');
+    var errorMail = document.getElementById('errorMail');
 
-    // Ajouter un écouteur d'événement au clic sur chaque bouton de modification
-    modifierMailButton.addEventListener('click', function() {
-        window.location.href = "../../Controller/Modifier.php?modif=login&new=" + encodeURIComponent(mailInput.value);
+    // Regex for email validation
+    var emailRegex = /^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/;
+
+    // Ajouter un écouteur d'événement au clic sur le bouton de modification de l'email
+    modifierMailButton.addEventListener('click', function(e) {
+        if (!emailRegex.test(mailInput.value)) {
+            e.preventDefault();
+            errorMail.textContent = 'Email invalide';
+        } else {
+            errorMail.textContent = '';
+            window.location.href = "../../Controller/Modifier.php?modif=login&new=" + encodeURIComponent(mailInput.value);
+        }
     });
 
+    // Ajouter des écouteurs d'événement au clic sur les autres boutons de modification
     modifierNomButton.addEventListener('click', function() {
         window.location.href = "../../Controller/Modifier.php?modif=nom&new=" + encodeURIComponent(nomInput.value);
     });
@@ -111,3 +114,6 @@ foreach ($Panier as $panierItem) {
         window.location.href = "../../Controller/Modifier.php?modif=prenom&new=" + encodeURIComponent(prenomInput.value);
     });
 </script>
+
+</body>
+</html>

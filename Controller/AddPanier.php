@@ -4,6 +4,10 @@ $id = $_GET["id"];
 include '../Model/PanierClasse.php';
 include '../Model/UserClasse.php';
 include '../Model/bdd-pdo.php';
+
+if(!isset($_SESSION['User'])){
+    header("Location: ../Vue/Login/Connexion.php");
+}
 $Compte = unserialize($_SESSION['User']);
 
 if(isset($_GET["id"]) && !empty($_GET["id"]))

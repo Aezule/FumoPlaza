@@ -55,7 +55,7 @@ class Commande
                 // Commit de la transaction
                 $cnx->commit();
     
-                $messageResultat = "Commande et produits ajoutés avec succès";
+                $messageResultat = "Votre commande a bien été prise en compte !";
             } catch (Exception $e) {
                 // Rollback de la transaction en cas d'erreur
                 $cnx->rollBack();

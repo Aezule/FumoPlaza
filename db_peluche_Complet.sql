@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `authentification` (
 --
 
 INSERT INTO `authentification` (`IdCompte`, `login`, `mdp`, `nom`, `prenom`, `idRole`) VALUES
-(1, 'pumkin', 'pumkin', 'pumkinale', 'pumkin', 1),
+(1, 'pumkin@gmail.com', 'pumkin', 'pumkinale', 'pumkin', 1),
 (2, 'danyAdmin@gmail.com', 'dany', 'Admin', 'danyy', 2);
 
 -- --------------------------------------------------------
@@ -134,6 +134,9 @@ CREATE TABLE IF NOT EXISTS `produit` (
   KEY `idCateg` (`idCateg`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
+
+
+
 --
 -- Déchargement des données de la table `produit`
 --
@@ -203,6 +206,25 @@ ALTER TABLE `produit`
   ADD CONSTRAINT `produit_ibfk_1` FOREIGN KEY (`idCateg`) REFERENCES `categorie` (`idCateg`);
 COMMIT;
 
+
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+DROP USER IF EXISTS 'UserFumo'@'localhost';
+-- Create a new user with a password
+CREATE USER 'UserFumo'@'localhost' IDENTIFIED BY 'm0Td3P@ss3';
+
+-- Grant privileges to the user on specific tables in a specific database
+GRANT SELECT, INSERT, UPDATE, DELETE ON db_peluche.authentification TO 'UserFumo'@'localhost';
+GRANT SELECT, INSERT, UPDATE, DELETE ON db_peluche.categorie TO 'UserFumo'@'localhost';
+GRANT SELECT, INSERT, UPDATE, DELETE ON db_peluche.commande TO 'UserFumo'@'localhost';
+GRANT SELECT, INSERT, UPDATE, DELETE ON db_peluche.concerner TO 'UserFumo'@'localhost';
+GRANT SELECT, INSERT, UPDATE, DELETE ON db_peluche.memoriser_panier TO 'UserFumo'@'localhost';
+GRANT SELECT, INSERT, UPDATE, DELETE ON db_peluche.produit TO 'UserFumo'@'localhost';
+GRANT SELECT, INSERT, UPDATE, DELETE ON db_peluche.role TO 'UserFumo'@'localhost';
+
+-- Apply the changes
+FLUSH PRIVILEGES;

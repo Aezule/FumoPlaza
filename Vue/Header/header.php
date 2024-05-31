@@ -16,9 +16,7 @@
             </div>
 
             <div class="buttons">
-            <div class="Panier">
-                <button>Panier</button>
-            </div>
+      
             <div class="button">
             <Button>
                 <?php if(!isset($_SESSION['User'])) {
