@@ -81,7 +81,7 @@ foreach ($Panier as $panierItem) {
 
     <br>
 
-    <a href="./deconnexion">Deconnexion</a>
+    <a href="../../Controller/deconnexion">Deconnexion</a>
 </div>
 
 </div>
@@ -100,14 +100,14 @@ foreach ($Panier as $panierItem) {
 
     // Ajouter un écouteur d'événement au clic sur chaque bouton de modification
     modifierMailButton.addEventListener('click', function() {
-        window.location.href = "./Modifier.php?modif=login&new=" + encodeURIComponent(mailInput.value);
+        window.location.href = "../../Controller/Modifier.php?modif=login&new=" + encodeURIComponent(mailInput.value);
     });
 
     modifierNomButton.addEventListener('click', function() {
-        window.location.href = "./Modifier.php?modif=nom&new=" + encodeURIComponent(nomInput.value);
+        window.location.href = "../../Controller/Modifier.php?modif=nom&new=" + encodeURIComponent(nomInput.value);
     });
 
     modifierPrenomButton.addEventListener('click', function() {
-        window.location.href = "./Modifier.php?modif=prenom&new=" + encodeURIComponent(prenomInput.value);
+        window.location.href = "../../Controller/Modifier.php?modif=prenom&new=" + encodeURIComponent(prenomInput.value);
     });
 </script>

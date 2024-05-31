@@ -41,7 +41,7 @@ session_start();
                 <h1><?php echo $produit->getLibelle(); ?></h1>
                 <h2><?php echo $produit->getPrix(); ?> euro</h2>
                 <div class="BoutonAchat">
-                    <button><a href="./AddPanier.php?&id=<?php echo $_GET["id"] ?>">Acheter</a></button>
+                    <button><a href="../../Controller/AddPanier.php?&id=<?php echo $_GET["id"] ?>">Acheter</a></button>
                 </div>
                 <p><?php echo $produit->getDescriptionLong(); ?></p>
                 <p> Quantité restant en stock : <?php echo $produit->getQteStock(); ?></p>

@@ -48,7 +48,7 @@ $produits = Produit::GetAllProduits();
                         </li>
                         <div class="BoutonAchat">
 
-                        <button><a href="./SuppProduit.php?idProduit=<?php echo htmlspecialchars($produit->getIdProduit());?>" >Supprimer</a></button>
+                        <button><a href="../../Controller/SuppProduit.php?idProduit=<?php echo htmlspecialchars($produit->getIdProduit());?>" >Supprimer</a></button>
                         </div>
                         
                     </h3>

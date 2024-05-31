@@ -1,10 +1,10 @@
 <?php
 session_start();
-include '../../Model/UserClasse.php';
-include '../../Model/PanierClasse.php';
-include '../../Model/ProduitClasse.php';
-include '../../Model/bdd-pdo.php';
-include '../../Model/CommandeClasse.php';
+include '../Model/UserClasse.php';
+include '../Model/PanierClasse.php';
+include '../Model/ProduitClasse.php';
+include '../Model/bdd-pdo.php';
+include '../Model/CommandeClasse.php';
 
 $Compte = unserialize($_SESSION['User']);
 $Panier = Panier::GetCommandeByClient($Compte->getIdCompte());
@@ -19,5 +19,5 @@ foreach ($Panier as $panierItem) {
 if ($produit !== null) {
 $Resultat = Commande::SetToCommande($Compte->getIdCompte(),$produitsPanier);
 }
-header("Location: ./Achat.php?message=$Resultat");
+header("Location: ../Vue/Payement/Achat.php?message=$Resultat");
 

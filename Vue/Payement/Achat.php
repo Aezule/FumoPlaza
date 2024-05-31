@@ -63,7 +63,7 @@ foreach ($Panier as $panierItem) {
                 <p>Prix Total : <?php echo $PrixTotal; ?> euro</p>
 
                 <div class="BoutonAchat">
-                <button><a href="./ConfirmationAchat.php">Acheter</a></button>
+                <button><a href="../../Controller/ConfirmationAchat.php">Acheter</a></button>
                 </div>
            <div class="text-success"><?php if(isset($_GET["message"])){echo $_GET["message"]; }  ?></div>
                 
