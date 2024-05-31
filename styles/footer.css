@@ -1,0 +1,28 @@
+.Footer{
+    margin-top: 100px;
+    padding: 50px;
+    border-top: 1px solid #333;
+    display: flex;
+  
+}
+
+.Footer img{
+    margin-right: 10px; 
+    height: 100px;
+    width: auto;
+    padding-left: 20px;
+}
+.Footer a{
+    text-decoration: none;
+    color: #000000;
+    font-size: larger;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.Footer li{
+    display: inline-block;
+    margin: 30px;
+}
+.Footer a:hover{
+    color: #ff9eda;
+}

@@ -1,0 +1,302 @@
+.mainCateg {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    position: relative;
+}
+
+.mainCateg img {
+    object-fit: cover;
+    
+}
+
+.mainCateg a{
+    position: absolute;
+    top: 50%;
+    background-color: black;
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: large;
+}
+.mainCateg :hover{
+    transition: 500ms;
+    background-color: white;
+    color: black;
+}
+#Miku {
+    height: 500px;
+    width: 600px;
+}
+
+#Masuko {
+    height: 500px;
+    width: 400px;
+}
+
+
+.secondCateg{
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    position: relative;
+}
+
+.secondCateg a{
+    background-color: black;
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: large;
+}
+.secondCateg li{
+    list-style-type: none;
+}
+.secondCateg img {
+    object-fit: cover;
+    height: 350px;
+    width: 350px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.button a{
+
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+
+}
+.BoutonCateg{
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    position: relative;
+
+}
+.BoutonCateg button{
+    position: absolute;
+    top: 70%;
+    background-color: black;
+    color: white;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: large;
+}
+.BoutonCateg :hover{
+    transition: 500ms;
+    background-color: white;
+    color: black;
+}
+
+#Text {
+    margin-top: 80px;
+    margin-left: 340px;
+}
+
+
+.imgCenter{padding-left: 33%;}
+.bouton-carousel{
+    background-color: black;
+}
+
+.GeneralProduct{
+    padding-left: 200px;
+    padding-top: 60px;
+    position: relative;
+    width: 70%;
+    height: 70%;
+    display: flex;
+}
+
+.InformationProduct{
+    padding-top: 30px;
+    padding-left: 100px;
+    margin-left: 50px;
+    font-size: 25px;
+}
+.InformationProduct p{
+    padding-top: 20px;
+}
+
+
+
+
+.BoutonAchat button{
+        padding: 5px;
+        padding-left: 150px;
+        padding-right: 150px;
+        color: aliceblue;
+        background-color: black;
+        width: 100%;
+}
+.BoutonAchat a {
+    text-decoration: none;
+    color: white;
+}
+
+.Login input{
+    border-color:black ;
+    border-width: 1px;
+    border-style: double;
+}
+.Login label{
+    display: block;
+  
+}
+.Login{
+    text-align: center;
+}
+
+.Login input{
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.boutonBas input{
+    margin-right: 30px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+
+.Register input{
+    border-color:black ;
+    border-width: 1px;
+    border-style: double;
+}
+.Register label{
+    display: block;
+  
+}
+.Register{
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+
+}
+.Register img{
+    margin-right: 50px;
+}
+
+.Register input{
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.headerInsco{
+    padding-top: 100px;
+}
+.headerInsco h1{
+    justify-content: center;
+    text-align: center;
+}
+
+.CompteStyle{
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+}
+
+.CompteStyle h1{
+    justify-content: center;
+    text-align: center;
+    padding-left: 150px;
+    padding-right: 150px;
+}
+.PanierStyle{
+border-color: black ;
+border-width: 1px;
+border-style: double;
+margin-right: 100px;
+padding: 10px;
+}
+
+
+.DataProfil{
+    padding-left: 150px;
+    border-color: black ;
+    border-width: 1px;
+    border-style: double;
+    padding: 10px;
+}
+
+.DataProfil input{
+    background-color: rgba(226, 226, 226, 0.575);
+}
+
+.DataProfil button{
+    margin-left: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: aliceblue;
+    background-color: black;
+
+}
+
+.DataProfil button:hover {
+    transition: 200ms;
+    background-color: rgb(216, 216, 216);
+    color: black;
+}
+
+.PageAchat h1{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.RecapPanier{
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+   
+}
+.RecapPanier h1{
+    margin-right: 100px;
+ 
+}
+
+.PrixPanier p{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.PrixPanier li{
+    list-style-type: none;
+}
+
+.PageBackOffice h1{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.RecapPanier{
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+   
+}
+.RecapPanier h1{
+    margin-right: 100px;
+ 
+}
+
+.ListeProduits{
+    padding-right: 100px;
+}

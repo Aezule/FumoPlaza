@@ -1,0 +1,116 @@
+/* Styles pour le header */
+
+@font-face{
+    font-family: 'Itim';
+    src: url(Itim.ttf);
+    font-weight: 400;
+}
+
+* {
+    font-family: 'Itim', sans-serif;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+header {
+    background-color: #ffb6c150;
+    text-align: center;
+    border-bottom: #000000;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+}
+
+header h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+header nav {
+    margin-top: 10px;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin: 30px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #000000;
+    font-size: larger;
+}
+
+header nav ul li a:hover {
+    color: #ff9eda;
+}
+
+
+.buttonHeader{
+    width: 65%;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    text-align: center;
+}
+
+.buttonHeader nav ul li a{
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    margin: auto;
+}
+
+
+.header{
+    display: flex;
+}
+
+.Title{
+    display: flex;
+}
+
+.Title img{
+    margin-right: 10px; 
+    height: 100px;
+    width: auto;
+    padding-left: 20px;
+}
+
+.Title a{
+    margin: auto;
+}
+.Title a{
+    text-decoration: none;
+    color: #000000;
+    font-size: larger;
+
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    text-align: center;
+}
+.buttons :hover{
+    color: #ff9eda;
+
+}
+.buttons button {
+    display: flex;
+    background-color: black;
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 10px;
+}
