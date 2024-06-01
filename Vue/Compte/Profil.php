@@ -78,6 +78,10 @@ foreach ($Panier as $panierItem) {
         <br>
 
         <a href="../../Controller/deconnexion">Déconnexion</a>
+        <?php if ($Compte->getRole() == 1): ?>
+            <a href="../Backoffice/backoffice.php">Backoffice</a>
+
+        <?php endif; ?>
     </div>
 </div>
 

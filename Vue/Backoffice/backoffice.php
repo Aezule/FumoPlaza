@@ -5,7 +5,15 @@ include '../../Model/PanierClasse.php';
 include '../../Model/ProduitClasse.php';
 include '../../Model/bdd-pdo.php';
 
+
+if(!isset($_SESSION['User'])){
+    header("Location: ../Login/Connexion.php");
+}
 $Compte = unserialize($_SESSION['User']);
+
+if($Compte->getRole() != 1){
+    header("Location: ../..");
+}
 $Panier = Panier::GetCommandeByClient($Compte->getIdCompte());
 
 $produits = [];

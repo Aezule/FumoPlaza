@@ -37,6 +37,10 @@ class User
     {
         return $this->prenom;
     }
+    public function getRole()
+    {
+        return $this->idRole;
+    }
 
 
     public static function GetConnexion($email, $mdp)
